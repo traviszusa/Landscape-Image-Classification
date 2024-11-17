@@ -10,6 +10,10 @@
     -webkit-text-fill-color: transparent; /* Membuat teks transparan untuk menampilkan gradien */
 }
 
+[data-testid="stSidebarCollapsedControl"] {
+    display: none !important;
+}
+
 details {
     padding: 10px;
     background-color: #6a4b3a;
