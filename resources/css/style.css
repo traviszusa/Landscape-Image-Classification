@@ -11,7 +11,7 @@
 }
 
 [data-testid="stSidebarCollapsedControl"] {
-    display: none !important;
+    display: none;
 }
 
 details {

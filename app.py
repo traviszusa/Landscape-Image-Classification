@@ -12,10 +12,10 @@ styles = {
     "nav": {
         "background-color": "#6a4b3a",
         "justify-content": "left",
-        "padding-left": "5px",
     },
     "img": {
         "padding-right": "14px",
+        "padding-left": "14px",
     },
     "span": {
         "color": "#e4e3ef",
