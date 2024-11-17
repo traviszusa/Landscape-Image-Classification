@@ -1,42 +1,63 @@
+import os
 import streamlit as st
-from streamlit_option_menu import option_menu
+from streamlit_navigation_bar import st_navbar
+import pages as pg
 
-selected2 = option_menu(None, ["Home", "Upload", "Tasks", 'Settings'], 
-    icons=['house', 'cloud-upload', "list-task", 'gear'], 
-    menu_icon="cast", default_index=0, orientation="horizontal")
-selected2
+st.set_page_config(initial_sidebar_state="collapsed")
 
-# 3. CSS style definitions
-selected3 = option_menu(None, ["Home", "Upload",  "Tasks", 'Settings'], 
-    icons=['house', 'cloud-upload', "list-task", 'gear'], 
-    menu_icon="cast", default_index=0, orientation="horizontal",
-    styles={
-        "container": {"padding": "0!important", "background-color": "#fafafa"},
-        "icon": {"color": "orange", "font-size": "25px"}, 
-        "nav-link": {"font-size": "25px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
-        "nav-link-selected": {"background-color": "green"},
+pages = ["Live Camera", "Upload Image", "About", "GitHub"]
+parent_dir = os.path.dirname(os.path.abspath(__file__))
+urls = {"GitHub": "https://github.com/traviszusa/Landscape-Image-Classification"}
+styles = {
+    "nav": {
+        "background-color": "#6a4b3a",
+        "justify-content": "left",
+        "padding-left": "5px",
+    },
+    "img": {
+        "padding-right": "14px",
+    },
+    "span": {
+        "color": "#e4e3ef",
+        "padding": "14px",
+    },
+    "active": {
+        "background-color": "#121215",
+        "color": "var(--text-color)",
+        "font-weight": "bold",
+        "padding": "14px",
+    },
+    "hover": {
+        "background-color": "#a4aa64",
+        "color": "var(--text-color)",
+        "font-weight": "normal",
+        "padding": "14px",
+    },
+    "ul": {
+        "justify-content": "flex-start",
     }
+}
+
+options = {
+    "show_menu": True,
+    "show_sidebar": False,
+}
+
+page = st_navbar(
+    pages,
+    logo_path="./resources/images/logo.svg",
+    urls=urls,
+    styles=styles,
+    options=options,
 )
 
-# 4. Manual item selection
-if st.session_state.get('switch_button', False):
-    st.session_state['menu_option'] = (st.session_state.get('menu_option', 0) + 1) % 4
-    manual_select = st.session_state['menu_option']
-else:
-    manual_select = None
-    
-selected4 = option_menu(None, ["Home", "Upload", "Tasks", 'Settings'], 
-    icons=['house', 'cloud-upload', "list-task", 'gear'], 
-    orientation="horizontal", manual_select=manual_select, key='menu_4')
-st.button(f"Move to Next {st.session_state.get('menu_option', 1)}", key='switch_button')
-selected4
+functions = {
+    "Home": pg.show_home,
+    "Live Camera": pg.show_camera,
+    "Upload Image": pg.show_upload,
+    "About": pg.show_about,
+}
 
-# 5. Add on_change callback
-def on_change(key):
-    selection = st.session_state[key]
-    st.write(f"Selection changed to {selection}")
-    
-selected5 = option_menu(None, ["Home", "Upload", "Tasks", 'Settings'],
-                        icons=['house', 'cloud-upload', "list-task", 'gear'],
-                        on_change=on_change, key='menu_5', orientation="horizontal")
-selected5
+go_to = functions.get(page)
+if go_to:
+    go_to()
