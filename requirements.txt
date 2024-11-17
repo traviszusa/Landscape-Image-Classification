@@ -4,6 +4,10 @@ pandas==2.2.3
 Pillow==11.0.0
 scikit_learn==1.5.2
 seaborn==0.13.2
-torch==2.5.1+cu124
-torchvision==0.20.1+cu124
+streamlit==1.38.0
+streamlit_community_navigation_bar==4.0.4
+streamlit_navigation_bar==3.3.0
+torch==2.5.1
+torchvision==0.20.1
 tqdm==4.66.6
+~treamlit==1.40.1
