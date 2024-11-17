@@ -5,7 +5,6 @@ Pillow==10.0.0
 scikit_learn==1.5.2
 seaborn==0.13.2
 streamlit==1.38.0
-streamlit_community_navigation_bar==4.0.4
 streamlit_navigation_bar==3.3.0
 torch==2.5.1
 torchvision==0.20.1
