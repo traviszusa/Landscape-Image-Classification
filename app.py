@@ -15,7 +15,7 @@ styles = {
     },
     "img": {
         "padding-right": "14px",
-        "padding-left": "14px",
+        "padding-left": "5px",
     },
     "span": {
         "color": "#e4e3ef",
