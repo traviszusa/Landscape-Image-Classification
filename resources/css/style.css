@@ -2,25 +2,140 @@
     text-align: center;
     font-size: 48px;
     font-weight: bold;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.sub-home {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 .gradient {
     background: linear-gradient(to right, #e4e3ef, #a4aa64); /* Gradien warna */
     -webkit-background-clip: text; /* Memotong gradien pada teks */
     -webkit-text-fill-color: transparent; /* Membuat teks transparan untuk menampilkan gradien */
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.container {
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.container-content {
+    margin: 0rem !important;
+}
+
+.zero-margin {
+    margin: 0rem !important;
+}
+
+.note {
+    margin-top: 1rem !important;
+    margin-bottom: 0rem !important;
+    text-align: justify;
+    font-size: 18px;
+}
+
+.text-justify {
+    text-align: justify;
+    font-size: 18px;
+}
+
+.ul-content {
+    margin: 0rem !important;
+    padding-left: 20px !important;
+    font-size: 18px;
+}
+
+.ul-content-2 {
+    margin: 0rem !important;
+    padding-left: 40px !important;
+    padding-right: 22px !important;
+}
+
+.paragraph-details {
+    padding-left: 10px !important;
+    padding-right: 22px !important;
+    margin: 0rem !important;
+    text-align: justify;
+}
+
+.color-pre {
+    color: #e4e3ef !important;
+}
+
+.container:hover {
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
+}
+
+[data-testid="stApp"] {
+    background-image: url("https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 [data-testid="stSidebarCollapsedControl"] {
     display: none;
 }
 
-details {
-    padding: 10px;
-    background-color: #6a4b3a;
-    border-radius: 10px;
+[data-testid="stMarkdownContainer"] > p {
+    color: #e4e3ef !important;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+[data-testid="stFileUploaderDropzone"]:hover {
+    background-color: #a4aa64 !important;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.02);
+}
+
+.st-au:hover {
+    background-color: #a4aa64 !important;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+[data-testid="stMarkdownContainer"] > ul {
+    color: #e4e3ef !important;
+    font-size: 18px !important;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.st-emotion-cache-xcmkt0:hover {
+    background-color: #a4aa64 !important;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
-    margin-bottom: 10px;
+}
+
+[data-testid="stMarkdownContainer"] > blockquote {
+    color: #e4e3ef !important;
+    padding: 0px 1em 0px 1em !important;
+    text-align: justify;
+}
+
+[data-testid="stExpanderToggleIcon"] {
+    visibility: hidden;
+}
+
+[data-testid="stImageContainer"] > img {
+    border-radius: 10px;
+}
+
+details {
+    background-color: #0F1116;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 details[open] {
@@ -28,23 +143,7 @@ details[open] {
 }
 
 details:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     background-color: #a4aa64;
     cursor: pointer;
-}
-
-summary {
-    font-weight: bold;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-summary::marker {
-    content: none;
-}
-
-.paragraph-details {
-    padding-left: 10px;
-    padding-right: 10px;
-    text-align: justify;
 }

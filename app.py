@@ -3,14 +3,14 @@ import streamlit as st
 from streamlit_navigation_bar import st_navbar
 import pages as pg
 
-st.set_page_config(initial_sidebar_state="collapsed")
+st.set_page_config(page_title="Classicape",page_icon="⛰️", initial_sidebar_state="collapsed")
 
-pages = ["Live Camera", "Upload Image", "About", "GitHub"]
+pages = ["Live Camera", "Upload Image", "Help", "GitHub"]
 parent_dir = os.path.dirname(os.path.abspath(__file__))
 urls = {"GitHub": "https://github.com/traviszusa/Landscape-Image-Classification"}
 styles = {
     "nav": {
-        "background-color": "#6a4b3a",
+        "background-color": "#0F1116",
         "justify-content": "left",
     },
     "img": {
@@ -22,7 +22,7 @@ styles = {
         "padding": "14px",
     },
     "active": {
-        "background-color": "#121215",
+        "background-color": "#a4aa64",
         "color": "var(--text-color)",
         "font-weight": "bold",
         "padding": "14px",
@@ -39,7 +39,7 @@ styles = {
 }
 
 options = {
-    "show_menu": True,
+    "show_menu": False,
     "show_sidebar": False,
 }
 
@@ -55,7 +55,7 @@ functions = {
     "Home": pg.show_home,
     "Live Camera": pg.show_camera,
     "Upload Image": pg.show_upload,
-    "About": pg.show_about,
+    "Help": pg.show_help,
 }
 
 go_to = functions.get(page)
